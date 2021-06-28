@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //app.use telling the server to serve up static content from a certain path
 const publicDirPath = path.join(__dirname,'../public')
@@ -98,6 +99,6 @@ app.get('*',(req,res) =>{
 
 
 //app.listen starts up the server on a port, the second argument is an optional callback function 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log('server started')
 })
